@@ -118,12 +118,6 @@ app.post('/language/nahuatl/words',function(req,res){
 	})
 })
 app.patch('/language/nahuatl/words/:word', (req,res)=>{
-	var updateWord = db.Word({
-		word_native: req.body.word_native,
-		word_english: req.body.word_english,
-		correct_responses: req.body.correct_responses,
-		source: req.body.source,
-	})
 	db.Word.findOneAndUpdate({word_native: req.body.word_native}, {"$set": {
 		"word_native": req.body.word_native,
 		"word_english": req.body.word_english,
