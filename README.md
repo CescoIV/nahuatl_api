@@ -30,7 +30,6 @@ Post a word in Nahuatl to the API:
 Use the following JSON object in the body for guidance:
 
 `{
-
 	"word_native": String(Native word),
 
 	"word_english": String(english translation),
@@ -38,7 +37,6 @@ Use the following JSON object in the body for guidance:
 	"correct_responses": Array(other possible translations/english synonyms of word_english),
 
 	"source": String(Where is this word from? Slang? Classical Nahuatl? Veracruz dialect? etc.)
-
 }`
 
 ## PATCH
@@ -55,6 +53,5 @@ Use the following JSON object in the body for guidance:
 
 	"correct_responses": Array(other possible translations/english synonyms of word_english),
 
-	"source": String(Where is this word from? Slang? Classical Nahuatl? Veracruz dialect? etc.)
-	
+	"source": String(Where is this word from? Slang? Classical Nahuatl? Veracruz dialect? etc.)	
 }`
