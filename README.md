@@ -10,6 +10,8 @@ exist for it in the development world. This is an experiment to alleviate that.
 The API currently lives at http://nahuatl-api.herokuapp.com/
 It currently supports Post, Patch and Get requests to the word database.
 
+To see its current Front-End Interface, checkout: http://study-nahuatl.herokuapp.com/ 
+
 Here are the Routes to use:
 
 ## GET:
