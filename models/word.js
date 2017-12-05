@@ -5,6 +5,7 @@ var wordSchema = new Schema({
 	word_native:String,
 	word_english:String,
 	correct_responses: Array,
+	source: String,
 })
 
 var Word = mongoose.model('Word', wordSchema);

@@ -24,11 +24,11 @@ mongoose.connection.openUri(process.env.MONGODB_URI || process.env.DB_CONN, {}, 
 //ROUTES
 app.get('/', function(req,res){
 	res.send(`
-		Welcome to the Nahuatl API.
-		This is an experimental API for use with the Nahuatl Project.
-		Check: https://github.com/CescoIV/nahuatl_project.
-		Currently all data is dummy data, check  the github repository
-		read me for routes/ more information
+		Welcome to the Nahuatl API. 
+		This is an experimental, open API for use with the Study-Nahuatl API.
+		Check: https://github.com/CescoIV/nahuatl_api.
+		Currently our data is not curated! Check  the github repository
+		read me for routes/ more information.
 		`);
 })
 
@@ -117,6 +117,26 @@ app.post('/language/nahuatl/words',function(req,res){
 		}
 	})
 })
+app.patch('/language/nahuatl/words/:word', (req,res)=>{
+	var updateWord = db.Word({
+		word_native: req.body.word_native,
+		word_english: req.body.word_english,
+		correct_responses: req.body.correct_responses,
+		source: req.body.source,
+	})
+	db.Word.findOneAndUpdate({word_native: req.body.word_native}, {"$set": {
+		"word_native": req.body.word_native,
+		"word_english": req.body.word_english,
+		"correct_responses": req.body.correct_responses,
+		"source": req.body.source,
+	}}).exec((err,response)=>{
+		if(err){
+			console.log(err);
+		}else{
+			res.status(201).json(response);
+		}
+	})
+});
 
 app.listen(port,function(){
 	console.log(`Server listening on port ${port}`);
