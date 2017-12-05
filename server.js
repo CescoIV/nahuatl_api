@@ -25,7 +25,7 @@ mongoose.connection.openUri(process.env.MONGODB_URI || process.env.DB_CONN, {}, 
 app.get('/', function(req,res){
 	res.send(`
 		Welcome to the Nahuatl API. 
-		This is an experimental, open API for use with the Study-Nahuatl API.
+		This is an experimental, open API for use with the Study-Nahuatl app.
 		Check: https://github.com/CescoIV/nahuatl_api.
 		Currently our data is not curated! Check  the github repository
 		read me for routes/ more information.
