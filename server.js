@@ -31,7 +31,6 @@ app.get('/', function(req,res){
 		read me for routes/ more information.
 		`);
 })
-
 //USER ROUTES
 app.get('/users/:username', function(req,res){
 	let username = req.params.username;
@@ -95,11 +94,32 @@ app.patch('/users/:username/:word', function(req,res){
 })
 //WORD ROUTES
 app.get('/language/nahuatl/words', function(req,res){
+	//get all words in database
 	db.Word.find({},function(err,data){
 		if(err){
 			console.log('could not get words');
 		}else{
 			res.send(data);
+		}
+	})
+})
+app.get('/language/nahuatl/words/:word',(req,res)=>{
+	//search nahuatl word
+	db.Word.find({word_native: req.params.word}, (err,data)=>{
+		if(err){
+			console.log(err);
+		}else{
+			res.send('201',data);
+		}
+	})
+})
+app.get('/language/nahuatl/words/en/:word',(req,res)=>{
+	//search english word
+	db.Word.find({word_english: req.params.word}, (err,data)=>{
+		if(err){
+			console.log(err);
+		}else{
+			res.send('201',data);
 		}
 	})
 })
