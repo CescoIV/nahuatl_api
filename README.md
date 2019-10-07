@@ -1,6 +1,6 @@
 # What is this?
 The Nahuatl API is an experimental attempt at tracking the Nahuatl language. 
-Nahuatl is the largest language spoken in Mexico with around 1.7 million speakers.
+Nahuatl is the largest native language spoken in Mexico with around 1.7 million speakers.
 Nonetheless finding resources to learn the language online is difficult as it is 
 overshadowed by more internationally established languages and few standardized sources
 exist for it in the development world. This is an experiment to alleviate that.
